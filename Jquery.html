@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JQuedry Lab 6</title>
+    <link href="C:\Users\ht6512yx\Downloads\Jquery\JQUERY stylesheet lab6.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--<style>C:\Users\sonja\Downloads\JAVASCRIPT STUFF\JQUERY
+      .regular {
+        font-weight: bold;
+      }
+    </style>-->
+
+</head>
+
+<body>
+
+<h2>Learnin' jquery</h2>
+<p>testing element</p>
+<!-- create an empty list -->
+<ul id="To_Do"></ul>
+<!--add an input box, this will fill the empty list-->
+<label for="entry">Things to do: </label></br>
+<input type="text" name="text" id="entry"></input></br></br>
+<!-- buttons to add/remove items to a list-->
+<button type="button" name="button" id="button">add item to list</button>
+<button type="button" name="removeButton" id="remove">remove item from list</button>
+
+<ul id="done list"></ul><!--new list if needed to hold done items, to put into a table-->
+<table id="done_table">This is a table of completed tasks</table><!--to be filled?-->
+<script>
+
+    $(function() {
+// TODO: data validation
+        // if (text.length == 0) {//validation
+        //     alert("please enter your list item");
+
+        $("#button").click(function() {
+
+            //if (entry.length != 0) {//validation
+            //alert("please enter your list item");
+
+            //show the user input, put it in a variable
+            alert("you entered: " + $("#entry").val());
+            var userInput = $("#entry").val();
+            //add it to the UL.
+            $("#To_Do").append("<li class=regular>" + userInput + "</li>");
+            $("#entry").val("");//clear the input textbox
+        })
+    });//end of add item fuunction
+
+    //when item is clicked add/remove done class
+    //Mark Fox helped with this snippet
+    $("#To_Do").click(function(event) {
+        var changeList = event.target;
+        $(changeList).toggleClass("done");
+    }) //end of toggle function.
+
+    $("#remove").click(function() {
+        //remove items that are done
+        alert("you are removing items from your list");
+        $(".done").detach();
+        // }
+    })//end of remove function
+
+</script>
+
+</body>
+</html>
