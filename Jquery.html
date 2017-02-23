@@ -28,7 +28,8 @@
 <button type="button" name="removeButton" id="remove">remove item from list</button>
 
 <ul id="done list"></ul><!--new list if needed to hold done items, to put into a table-->
-<table id="done_table">This is a table of completed tasks</table><!--to be filled?-->
+<table id="done_table"><tr><th scope="col">Completed</th></tr></table><!--to be filled?-->
+
 <script>
 
     $(function() {
@@ -58,9 +59,14 @@
     }) //end of toggle function.
 
     $("#remove").click(function() {
-        //remove items that are done
+        //remove items that are done.
         alert("you are removing items from your list");
-        $(".done").detach();
+        var finished = $(".done").detach();
+        //mark and Stack overflow helped.
+        for (i = 0; i < "finished".length; i++) {
+            var item = $(finished[i]);
+            $("#done_table").append("<tr><td>item</td></tr>")
+        }
         // }
     })//end of remove function
 
