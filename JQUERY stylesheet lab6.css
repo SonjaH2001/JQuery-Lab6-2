@@ -1,0 +1,16 @@
+/*style items-work in progress*/
+.regular {
+  text-decoration: underline;
+  font-style: italic;
+
+}
+/*strike-thorugh completed items*/
+.done {
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+}
+h2 {
+  text-decoration-color: red;
+}
